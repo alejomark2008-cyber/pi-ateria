@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fiesta & Piñata | Todo para celebrar</title>
+  <style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:#fffaf6;color:#17233d}.topbar{display:flex;align-items:center;gap:22px;padding:16px 5%;background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:20}.logo{font-size:1.35rem;font-weight:900;text-decoration:none;color:#17233d;white-space:nowrap}.logo span{color:#ed3f78}.search-wrap{flex:1;max-width:650px;margin:auto}.search-wrap input{width:100%;padding:13px 18px;border:1px solid #ddd;border-radius:999px;font-size:1rem;outline:none}.search-wrap input:focus{border-color:#ed3f78}.cart-btn,.nav a,.filter,.text-btn{cursor:pointer}.cart-btn{border:0;background:#17233d;color:#fff;padding:12px 17px;border-radius:999px;font-weight:800}.cart-btn b{background:#ed3f78;padding:2px 7px;border-radius:20px;margin-left:5px}.nav{display:flex;justify-content:center;gap:30px;padding:13px;background:#17233d}.nav a{color:#fff;text-decoration:none;font-weight:700}.hero{margin:28px 5%;padding:50px;display:grid;grid-template-columns:1.15fr .85fr;gap:30px;border-radius:30px;background:linear-gradient(135deg,#ffe6ee,#e5f7ff);overflow:hidden}.eyebrow{font-size:.76rem;letter-spacing:.14em;font-weight:900;color:#ed3f78;margin:0 0 9px}.hero h1{font-size:clamp(2.4rem,6vw,5rem);line-height:.95;margin:0 0 20px;max-width:650px}.hero p:not(.eyebrow){font-size:1.08rem;line-height:1.6;max-width:650px}.hero-art{min-height:280px;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;font-size:4rem;background:#fff;border-radius:28px;padding:25px;box-shadow:0 15px 45px #17233d14}.hero-art strong{width:100%;text-align:center;font-size:2.5rem;color:#ed3f78}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-block;border:0;border-radius:12px;padding:13px 20px;font-weight:900;text-decoration:none;cursor:pointer}.primary{background:#ed3f78;color:#fff}.secondary{background:#fff;color:#17233d}.dark{background:#17233d;color:#fff}.section{padding:55px 5%}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:24px}.section-head h2{margin:0;font-size:2rem}.text-btn{background:none;border:0;font-weight:900;color:#ed3f78}.kit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.kit{background:#fff;border:1px solid #eee;border-radius:20px;padding:20px;display:flex;gap:18px;align-items:center}.kit-icon{font-size:3.2rem;background:#f9e9f0;border-radius:16px;padding:14px}.kit h3{margin:0 0 7px}.kit p{margin:0;color:#667085;font-size:.9rem}.kit .price{font-weight:900;margin-top:9px}.kit button,.product button{margin-top:10px;border:0;background:#17233d;color:#fff;border-radius:9px;padding:9px 12px;font-weight:800;cursor:pointer}.inventory-section{display:grid;grid-template-columns:220px 1fr;gap:35px;background:#f3f6fb}.filters{background:#fff;border-radius:18px;padding:20px;height:max-content;position:sticky;top:90px}.filters h3{margin-top:0}.filter{display:block;width:100%;border:0;background:transparent;text-align:left;padding:10px 8px;border-radius:8px;font-weight:700}.filter.active,.filter:hover{background:#fbe7ef;color:#d72f67}.filters hr{border:0;border-top:1px solid #eee;margin:18px 0}.filters select{width:100%;padding:10px;border-radius:9px;border:1px solid #ddd}.products-area{min-width:0}.compact{align-items:center}.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.product{background:#fff;border:1px solid #e9e9e9;border-radius:16px;overflow:hidden}.product-img{height:155px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:linear-gradient(135deg,#fff0f4,#edf7ff)}.product-body{padding:14px}.badge{font-size:.7rem;font-weight:900;color:#ed3f78}.product h3{margin:5px 0;font-size:1rem}.product p{margin:0;color:#667085;font-size:.84rem}.price{font-weight:900;font-size:1.1rem;margin-top:10px}.product button{width:100%}.empty{text-align:center;padding:40px}.hidden{display:none}.themes{background:#fff}.theme-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.theme-grid button{border:1px solid #eee;background:#fff;border-radius:18px;padding:22px 8px;font-size:2.2rem;cursor:pointer}.theme-grid span{display:block;font-size:.82rem;font-weight:900;margin-top:8px}.help{margin:20px 5% 55px;padding:35px;border-radius:25px;background:#dff7ea;display:flex;justify-content:space-between;align-items:center;gap:20px}.help h2{margin:0 0 8px}.help p:not(.eyebrow){margin:0;color:#51615a}.contact{background:#17233d;color:#fff}.contact .eyebrow{color:#ff8db0}.contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:25px}.contact-grid>div{padding:20px;border:1px solid #34415a;border-radius:15px}.contact-grid p{color:#cbd2dd}.overlay{position:fixed;inset:0;background:#17233d66;z-index:30;display:none}.overlay.show{display:block}.cart-panel{position:fixed;right:0;top:0;width:min(430px,94vw);height:100%;background:#fff;z-index:31;transform:translateX(105%);transition:.25s;display:flex;flex-direction:column;box-shadow:-15px 0 50px #0002}.cart-panel.open{transform:translateX(0)}.cart-head{padding:20px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center}.cart-head h2{margin:0}.cart-head button{font-size:2rem;border:0;background:none;cursor:pointer}.cart-items{flex:1;overflow:auto;padding:15px}.cart-row{display:grid;grid-template-columns:1fr auto;gap:10px;padding:15px 0;border-bottom:1px solid #eee}.cart-row h4{margin:0 0 5px}.cart-row small{color:#667085}.qty{display:flex;align-items:center;gap:7px}.qty button{width:30px;height:30px;border:1px solid #ddd;background:#fff;border-radius:7px;cursor:pointer}.remove{border:0;background:none;color:#d72f67;cursor:pointer;font-size:.8rem}.cart-footer{padding:18px;border-top:1px solid #eee}.total{display:flex;justify-content:space-between;font-size:1.2rem;margin-bottom:15px}.full{width:100%}.clear-btn{width:100%;margin-top:10px;border:0;background:none;color:#d72f67;cursor:pointer;font-weight:800}@media(max-width:900px){.hero{grid-template-columns:1fr;padding:30px}.kit-grid{grid-template-columns:1fr 1fr}.product-grid{grid-template-columns:repeat(2,1fr)}.theme-grid{grid-template-columns:repeat(3,1fr)}.inventory-section{grid-template-columns:1fr}.filters{position:static}.contact-grid{grid-template-columns:1fr 1fr}}@media(max-width:600px){.topbar{flex-wrap:wrap}.logo{width:100%}.search-wrap{order:3;max-width:none;width:100%}.nav{gap:14px;overflow:auto;justify-content:flex-start;padding-left:5%}.hero{margin:15px 3%;padding:25px}.kit-grid,.product-grid{grid-template-columns:1fr}.section{padding:40px 4%}.theme-grid{grid-template-columns:repeat(2,1fr)}.help{margin:10px 4% 40px;display:block}.help .btn{margin-top:20px}.contact-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="logo" href="#inicio">🎉 Fiesta<span>&</span>Piñata</a>
+  <div class="search-wrap">
+    <input id="searchInput" type="search" placeholder="Busca piñatas, globos, kits..." aria-label="Buscar productos">
+  </div>
+  <button class="cart-btn" id="openCart" type="button">🛒 Carrito <b id="cartCount">0</b></button>
+</header>
+
+<nav class="nav">
+  <a href="#inicio">Inicio</a>
+  <a href="#kits">Kits</a>
+  <a href="#inventario">Inventario</a>
+  <a href="#tematicas">Temáticas</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+<main id="inicio">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">PIÑATERÍA • DECORACIÓN • FIESTAS</p>
+      <h1>Prepara tu fiesta a tu manera.</h1>
+      <p>Compra un kit completo o elige cada artículo por separado. Todo queda reunido en tu carrito para pedirlo por WhatsApp.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#kits">Ver kits</a>
+        <a class="btn secondary" href="#inventario">Ver inventario</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <span>🎈</span><span>🎁</span><span>🎂</span><span>🪅</span>
+      <strong>¡CELEBRA!</strong>
+    </div>
+  </section>
+
+  <section id="kits" class="section">
+    <div class="section-head">
+      <div><p class="eyebrow">PARA HACERLO FÁCIL</p><h2>Kits para tu fiesta</h2></div>
+      <button class="text-btn" data-filter="kit">Ver todos los kits →</button>
+    </div>
+    <div id="kitGrid" class="kit-grid"></div>
+  </section>
+
+  <section id="inventario" class="section inventory-section">
+    <aside class="filters">
+      <h3>Inventario</h3>
+      <button class="filter active" data-filter="all">Todos</button>
+      <button class="filter" data-filter="Piñatas">Piñatas</button>
+      <button class="filter" data-filter="Globos">Globos</button>
+      <button class="filter" data-filter="Decoración">Decoración</button>
+      <button class="filter" data-filter="Mesa y vajilla">Mesa y vajilla</button>
+      <button class="filter" data-filter="Dulces y sorpresas">Dulces y sorpresas</button>
+      <button class="filter" data-filter="Accesorios">Accesorios</button>
+      <hr>
+      <h4>Temática</h4>
+      <select id="themeFilter">
+        <option value="all">Todas</option>
+        <option>Unicornio</option>
+        <option>Dinosaurios</option>
+        <option>Princesas</option>
+        <option>Fútbol</option>
+        <option>Superhéroes</option>
+        <option>General</option>
+      </select>
+    </aside>
+    <div class="products-area">
+      <div class="section-head compact">
+        <div><p class="eyebrow">COMPRA INDIVIDUAL</p><h2>Productos disponibles</h2></div>
+        <span id="resultCount"></span>
+      </div>
+      <div id="productGrid" class="product-grid"></div>
+      <p id="emptyState" class="empty hidden">No encontramos productos con esos filtros.</p>
+    </div>
+  </section>
+
+  <section id="tematicas" class="section themes">
+    <div class="section-head"><div><p class="eyebrow">ENCUENTRA TU ESTILO</p><h2>Compra por temática</h2></div></div>
+    <div class="theme-grid">
+      <button data-theme="Unicornio">🦄<span>Unicornio</span></button>
+      <button data-theme="Dinosaurios">🦖<span>Dinosaurios</span></button>
+      <button data-theme="Princesas">👑<span>Princesas</span></button>
+      <button data-theme="Fútbol">⚽<span>Fútbol</span></button>
+      <button data-theme="Superhéroes">🦸<span>Superhéroes</span></button>
+      <button data-theme="General">🎈<span>General</span></button>
+    </div>
+  </section>
+
+  <section class="help">
+    <div>
+      <p class="eyebrow">¿NO SABES QUÉ ELEGIR?</p>
+      <h2>Cuéntanos cómo será tu fiesta.</h2>
+      <p>Te ayudamos a encontrar un kit o los productos individuales que necesitas.</p>
+    </div>
+    <button class="btn dark" id="helpWhatsapp" type="button">Hablar por WhatsApp</button>
+  </section>
+
+  <section id="contacto" class="contact section">
+    <div><p class="eyebrow">VISÍTANOS</p><h2>Estamos para ayudarte</h2></div>
+    <div class="contact-grid">
+      <div><b>📍 Ubicación</b><p>Bogotá, Colombia</p></div>
+      <div><b>📞 Teléfono</b><p>+57 300 123 4567</p></div>
+      <div><b>🕘 Horario</b><p>Lun–Sáb 8:00 a.m.–7:00 p.m.</p></div>
+      <div><b>💬 Pedidos</b><p>Por WhatsApp</p></div>
+    </div>
+  </section>
+</main>
+
+<div id="cartPanel" class="cart-panel" aria-hidden="true">
+  <div class="cart-head"><h2>Tu carrito</h2><button id="closeCart" type="button">×</button></div>
+  <div id="cartItems" class="cart-items"></div>
+  <div class="cart-footer">
+    <div class="total"><span>Total</span><strong id="cartTotal">$0</strong></div>
+    <button id="checkout" class="btn primary full" type="button">Pagar por WhatsApp</button>
+    <button id="clearCart" class="clear-btn" type="button">Vaciar carrito</button>
+  </div>
+</div>
+<div id="overlay" class="overlay"></div>
+
+<script>
+const WHATSAPP_NUMBER = "573001234567"; // Cambia este número por el WhatsApp real de la tienda.
+
+const products = [
+ {id:"p1",name:"Piñata Dinosaurio",category:"Piñatas",theme:"Dinosaurios",price:35000,icon:"🦖",stock:8},
+ {id:"p2",name:"Piñata Unicornio",category:"Piñatas",theme:"Unicornio",price:35000,icon:"🦄",stock:6},
+ {id:"p3",name:"Globo Número 5",category:"Globos",theme:"General",price:6500,icon:"🎈",stock:20},
+ {id:"p4",name:"Pack Globos Arcoíris x10",category:"Globos",theme:"General",price:12000,icon:"🎈",stock:15},
+ {id:"p5",name:"Guirnalda Feliz Cumpleaños",category:"Decoración",theme:"General",price:14000,icon:"🎊",stock:12},
+ {id:"p6",name:"Cortina Metálica",category:"Decoración",theme:"General",price:18000,icon:"✨",stock:10},
+ {id:"p7",name:"Set Platos y Vasos x10",category:"Mesa y vajilla",theme:"General",price:22000,icon:"🍽️",stock:14},
+ {id:"p8",name:"Bolsitas de Sorpresa x10",category:"Dulces y sorpresas",theme:"General",price:16000,icon:"🎁",stock:18},
+ {id:"p9",name:"Antifaces de Fiesta x10",category:"Accesorios",theme:"General",price:10000,icon:"🥳",stock:20},
+ {id:"p10",name:"Decoración Princesa",category:"Decoración",theme:"Princesas",price:28000,icon:"👑",stock:7},
+ {id:"p11",name:"Kit Globos Fútbol",category:"Globos",theme:"Fútbol",price:26000,icon:"⚽",stock:9},
+ {id:"p12",name:"Decoración Superhéroes",category:"Decoración",theme:"Superhéroes",price:30000,icon:"🦸",stock:5}
+];
+
+const kits = [
+ {id:"k1",name:"Kit Cumpleaños",desc:"Decoración básica para celebrar sin complicarte.",price:85000,icon:"🎂",items:["Guirnalda","Globos x10","Platos y vasos x10"]},
+ {id:"k2",name:"Kit Dinosaurios",desc:"Una fiesta temática completa para fans de los dinos.",price:125000,icon:"🦖",items:["Piñata Dinosaurio","Globos temáticos","Decoración dinosaurios"]},
+ {id:"k3",name:"Kit Unicornio",desc:"Colores, globos y detalles para una fiesta mágica.",price:125000,icon:"🦄",items:["Piñata Unicornio","Globos","Decoración unicornio"]},
+ {id:"k4",name:"Kit Fiesta Completa",desc:"Una combinación amplia para una celebración grande.",price:180000,icon:"🎉",items:["Piñata","Globos x10","Decoración","Mesa y vajilla","Sorpresas"]}
+];
+
+let cart = JSON.parse(sessionStorage.getItem("fiesta_cart") || "[]");
+let currentCategory = "all";
+let currentTheme = "all";
+
+const money = n => new Intl.NumberFormat("es-CO",{style:"currency",currency:"COP",maximumFractionDigits:0}).format(n);
+
+function save(){ sessionStorage.setItem("fiesta_cart", JSON.stringify(cart)); renderCart(); }
+function add(id,type="product"){
+  const source = type==="kit" ? kits : products;
+  const item = source.find(x=>x.id===id);
+  if(!item) return;
+  const existing = cart.find(x=>x.id===id);
+  const max = type==="product" ? item.stock : 99;
+  if(existing){ if(existing.qty < max) existing.qty++; }
+  else cart.push({id:item.id,type,name:item.name,price:item.price,qty:1,max,icon:item.icon});
+  save();
+  openCart();
+}
+function changeQty(id,delta){
+  const item=cart.find(x=>x.id===id); if(!item)return;
+  item.qty=Math.max(0,Math.min(item.max,item.qty+delta));
+  cart=cart.filter(x=>x.qty>0); save();
+}
+function removeItem(id){cart=cart.filter(x=>x.id!==id);save()}
+function renderKits(){
+  document.getElementById("kitGrid").innerHTML=kits.map(k=>`
+    <article class="kit">
+      <div class="kit-icon">${k.icon}</div>
+      <div><h3>${k.name}</h3><p>${k.desc}</p><div class="price">${money(k.price)}</div>
+      <button type="button" data-add-kit="${k.id}">Agregar al carrito</button></div>
+    </article>`).join("");
+  document.querySelectorAll("[data-add-kit]").forEach(b=>b.addEventListener("click",()=>add(b.dataset.addKit,"kit")));
+}
+function renderProducts(){
+  const q=document.getElementById("searchInput").value.trim().toLowerCase();
+  const list=products.filter(p=>(currentCategory==="all"||p.category===currentCategory)&&(currentTheme==="all"||p.theme===currentTheme)&&(`${p.name} ${p.category} ${p.theme}`.toLowerCase().includes(q)));
+  document.getElementById("resultCount").textContent=`${list.length} productos`;
+  document.getElementById("emptyState").classList.toggle("hidden",list.length!==0);
+  document.getElementById("productGrid").innerHTML=list.map(p=>`
+    <article class="product">
+      <div class="product-img">${p.icon}</div>
+      <div class="product-body">
+        <span class="badge">${p.category}</span>
+        <h3>${p.name}</h3><p>${p.theme} · ${p.stock} disponibles</p>
+        <div class="price">${money(p.price)}</div>
+        <button type="button" data-add="${p.id}">Agregar al carrito</button>
+      </div>
+    </article>`).join("");
+  document.querySelectorAll("[data-add]").forEach(b=>b.addEventListener("click",()=>add(b.dataset.add)));
+}
+function renderCart(){
+  const count=cart.reduce((s,x)=>s+x.qty,0), total=cart.reduce((s,x)=>s+x.price*x.qty,0);
+  document.getElementById("cartCount").textContent=count;
+  document.getElementById("cartTotal").textContent=money(total);
+  document.getElementById("cartItems").innerHTML=cart.length?cart.map(x=>`
+    <div class="cart-row"><div><h4>${x.icon} ${x.name}</h4><small>${money(x.price)} c/u</small><br><button class="remove" data-remove="${x.id}" type="button">Eliminar</button></div>
+    <div class="qty"><button type="button" data-dec="${x.id}">−</button><b>${x.qty}</b><button type="button" data-inc="${x.id}">+</button></div></div>`).join(""):`<p>Tu carrito está vacío.</p>`;
+  document.querySelectorAll("[data-inc]").forEach(b=>b.onclick=()=>changeQty(b.dataset.inc,1));
+  document.querySelectorAll("[data-dec]").forEach(b=>b.onclick=()=>changeQty(b.dataset.dec,-1));
+  document.querySelectorAll("[data-remove]").forEach(b=>b.onclick=()=>removeItem(b.dataset.remove));
+}
+function openCart(){document.getElementById("cartPanel").classList.add("open");document.getElementById("overlay").classList.add("show");document.getElementById("cartPanel").setAttribute("aria-hidden","false")}
+function closeCart(){document.getElementById("cartPanel").classList.remove("open");document.getElementById("overlay").classList.remove("show");document.getElementById("cartPanel").setAttribute("aria-hidden","true")}
+function checkout(){
+  if(!cart.length){alert("Agrega al menos un producto al carrito.");return}
+  const total=cart.reduce((s,x)=>s+x.price*x.qty,0);
+  const lines=cart.map(x=>`• ${x.name} x${x.qty} — ${money(x.price*x.qty)}`).join("\n");
+  const msg=`Hola, quiero realizar este pedido:\n\n${lines}\n\nTOTAL: ${money(total)}\n\n¿Me confirman disponibilidad y forma de pago?`;
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,"_blank");
+}
+document.getElementById("openCart").onclick=openCart;
+document.getElementById("closeCart").onclick=closeCart;
+document.getElementById("overlay").onclick=closeCart;
+document.getElementById("checkout").onclick=checkout;
+document.getElementById("clearCart").onclick=()=>{cart=[];save()};
+document.getElementById("searchInput").addEventListener("input",renderProducts);
+document.getElementById("themeFilter").addEventListener("change",e=>{currentTheme=e.target.value;renderProducts()});
+document.querySelectorAll(".filter").forEach(b=>b.addEventListener("click",()=>{
+  currentCategory=b.dataset.filter; document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active")); b.classList.add("active");
+  if(currentCategory==="kit"){document.getElementById("kits").scrollIntoView();return} renderProducts();
+}));
+document.querySelectorAll("[data-theme]").forEach(b=>b.addEventListener("click",()=>{
+  currentTheme=b.dataset.theme;document.getElementById("themeFilter").value=currentTheme;document.getElementById("inventario").scrollIntoView();renderProducts();
+}));
+document.getElementById("helpWhatsapp").onclick=()=>window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hola, necesito ayuda para preparar mi fiesta.")}`,"_blank");
+renderKits();renderProducts();renderCart();
+</script>
+</body>
+</html>
