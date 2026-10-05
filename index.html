@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fiesta & Piñata | Piñatería</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--dark:#171329;--pink:#ff4f87;--yellow:#ffd447;--blue:#4d7cff;--bg:#f7f7fb;--white:#fff;--muted:#6d6b7a}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--dark)}
+button,input,select{font:inherit}
+button{cursor:pointer;border:0}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid #eee}
+.top{max-width:1180px;margin:auto;padding:14px 18px;display:flex;align-items:center;gap:18px}
+.logo{font-weight:900;font-size:22px;white-space:nowrap}.logo span{color:var(--pink)}
+.search{flex:1;position:relative}.search input{width:100%;padding:13px 16px;border:1px solid #ddd;border-radius:14px;outline:none}.search input:focus{border-color:var(--pink)}
+.cart-btn{background:var(--dark);color:#fff;padding:12px 16px;border-radius:13px;font-weight:800}
+nav{max-width:1180px;margin:auto;padding:0 18px 13px;display:flex;gap:8px;overflow:auto}
+nav button{background:#f0eff5;padding:9px 15px;border-radius:999px;white-space:nowrap}
+nav button:hover{background:var(--yellow)}
+main{max-width:1180px;margin:auto;padding:25px 18px 70px}
+.hero{background:var(--dark);color:#fff;border-radius:25px;padding:38px;display:grid;grid-template-columns:1.4fr .8fr;gap:25px;align-items:center;margin-bottom:30px}
+.hero h1{font-size:clamp(34px,5vw,60px);line-height:.98;margin-bottom:15px}.hero p{color:#d9d6e6;max-width:600px;line-height:1.6}
+.hero-actions{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap}.primary{background:var(--yellow);color:var(--dark);padding:13px 18px;border-radius:12px;font-weight:900}.secondary{background:#fff;color:var(--dark);padding:13px 18px;border-radius:12px;font-weight:900}
+.hero-art{min-height:220px;border-radius:22px;background:linear-gradient(135deg,#ff4f87,#4d7cff);display:flex;align-items:center;justify-content:center;font-size:90px}
+.section{margin-top:34px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:16px}.section-head h2{font-size:27px}.section-head p{color:var(--muted);font-size:14px}
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:20px}.filter{padding:10px 14px;background:#fff;border:1px solid #e5e4ea;border-radius:10px}.filter.active,.filter:hover{background:var(--dark);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.card{background:#fff;border:1px solid #ecebf1;border-radius:18px;overflow:hidden;box-shadow:0 4px 15px #1713290a}
+.visual{height:145px;background:#f0eff8;display:flex;align-items:center;justify-content:center;font-size:62px}.card-body{padding:15px}.tag{display:inline-block;background:#f2efff;color:#5647a8;border-radius:999px;padding:5px 8px;font-size:11px;font-weight:800;margin-bottom:9px}.card h3{font-size:17px;margin-bottom:7px}.price{font-size:18px;font-weight:900}.stock{font-size:12px;color:#5b8267;margin:7px 0 12px}.card-actions{display:flex;gap:7px}.card-actions button{flex:1;padding:10px;border-radius:10px;font-weight:800}.view{background:#f0eff5}.add{background:var(--pink);color:#fff}
+.kit{border:2px solid transparent}.kit:hover{border-color:var(--pink)}.kit .visual{background:#fff1f6}.kit-list{font-size:12px;color:var(--muted);line-height:1.5;margin:8px 0 12px}
+.themes{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}.theme{background:#fff;border-radius:15px;padding:18px 8px;text-align:center;border:1px solid #eee;font-weight:800}.theme .emoji{font-size:30px;display:block;margin-bottom:7px}.theme:hover{transform:translateY(-2px);border-color:var(--pink)}
+.contact{background:#fff;border-radius:20px;padding:25px;display:grid;grid-template-columns:1fr 1fr;gap:20px;border:1px solid #eee}.contact p{color:var(--muted);line-height:1.7}.wa{display:inline-block;background:#25d366;color:#fff;padding:12px 17px;border-radius:12px;font-weight:900;margin-top:14px}
+.empty{padding:35px;text-align:center;color:var(--muted);background:#fff;border-radius:16px;grid-column:1/-1}
+.modal-back{position:fixed;inset:0;background:#0008;z-index:50;display:none;align-items:center;justify-content:center;padding:18px}.modal-back.show{display:flex}.modal{background:#fff;border-radius:20px;max-width:520px;width:100%;padding:23px;max-height:90vh;overflow:auto}.modal-top{display:flex;justify-content:space-between;gap:15px}.close{background:#eee;border-radius:50%;width:35px;height:35px}.modal h2{margin-bottom:10px}.modal p{color:var(--muted);line-height:1.6}.modal .big{font-size:70px;text-align:center;padding:20px;background:#f5f4fa;border-radius:15px;margin:15px 0}
+.cart-row{display:grid;grid-template-columns:1fr auto;gap:10px;padding:13px 0;border-bottom:1px solid #eee}.cart-row small{color:var(--muted)}.qty{display:flex;align-items:center;gap:7px}.qty button{width:29px;height:29px;border-radius:8px;background:#eee}.remove{color:#c22;background:none;font-size:12px;margin-top:5px}.cart-total{display:flex;justify-content:space-between;font-size:20px;font-weight:900;padding:18px 0}.checkout{width:100%;padding:14px;background:#25d366;color:#fff;border-radius:12px;font-weight:900}
+footer{text-align:center;color:#777;padding:25px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.themes{grid-template-columns:repeat(4,1fr)}.hero{grid-template-columns:1fr}.contact{grid-template-columns:1fr}}
+@media(max-width:560px){.top{flex-wrap:wrap}.logo{width:100%}.search{order:3;flex-basis:100%}.grid{grid-template-columns:1fr 1fr;gap:10px}.visual{height:120px}.hero{padding:25px}.themes{grid-template-columns:repeat(3,1fr)}.card-body{padding:11px}.card h3{font-size:15px}.price{font-size:16px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="top">
+    <div class="logo">🎉 Fiesta <span>&</span> Piñata</div>
+    <div class="search"><input id="search" type="search" placeholder="Buscar productos, kits o temáticas..."></div>
+    <button class="cart-btn" onclick="openCart()">🛒 Carrito (<span id="cartCount">0</span>)</button>
+  </div>
+  <nav>
+    <button onclick="go('inicio')">Inicio</button>
+    <button onclick="go('kits')">Kits</button>
+    <button onclick="go('inventario')">Inventario</button>
+    <button onclick="go('tematicas')">Temáticas</button>
+    <button onclick="go('contacto')">Contacto</button>
+  </nav>
+</header>
+
+<main>
+<section id="inicio" class="hero">
+  <div>
+    <h1>Todo para armar una fiesta increíble.</h1>
+    <p>Encuentra piñatas, globos, decoración, dulces, accesorios y kits completos. Agrega lo que necesites al carrito y envía tu pedido por WhatsApp.</p>
+    <div class="hero-actions">
+      <button class="primary" onclick="go('inventario')">Ver inventario</button>
+      <button class="secondary" onclick="go('kits')">Ver kits</button>
+    </div>
+  </div>
+  <div class="hero-art">🎈🎁</div>
+</section>
+
+<section id="kits" class="section">
+  <div class="section-head"><div><h2>Kits para tu fiesta</h2><p>Soluciones completas para comprar más fácil.</p></div></div>
+  <div id="kitsGrid" class="grid"></div>
+</section>
+
+<section id="inventario" class="section">
+  <div class="section-head"><div><h2>Inventario</h2><p>Productos individuales, separados por categoría.</p></div></div>
+  <div class="filters" id="categoryFilters"></div>
+  <div id="productsGrid" class="grid"></div>
+</section>
+
+<section id="tematicas" class="section">
+  <div class="section-head"><div><h2>Temáticas</h2><p>Selecciona una temática para filtrar el inventario.</p></div></div>
+  <div id="themes" class="themes"></div>
+</section>
+
+<section id="contacto" class="section">
+  <div class="contact">
+    <div><h2>¿Necesitas ayuda con tu pedido?</h2><p>Escríbenos por WhatsApp para consultar disponibilidad, precios por cantidad o preparar tu pedido.</p><a class="wa" id="contactWa" target="_blank" rel="noopener">💬 WhatsApp</a></div>
+    <div><h2>📍 Visítanos</h2><p>Bogotá, Colombia<br>Centro de Bogotá<br><br><strong>Horario:</strong> Lunes a sábado, 9:00 a.m. – 6:00 p.m.</p></div>
+  </div>
+</section>
+</main>
+<footer>© 2026 Fiesta & Piñata · Piñatería y artículos para fiestas</footer>
+
+<div id="modalBack" class="modal-back" onclick="if(event.target===this)closeModal()">
+  <div class="modal" id="modal"></div>
+</div>
+
+<script>
+const WHATSAPP_NUMBER = "573001234567"; // CAMBIA SOLO ESTE NÚMERO POR EL WHATSAPP REAL.
+const money = n => new Intl.NumberFormat("es-CO",{style:"currency",currency:"COP",maximumFractionDigits:0}).format(n);
+
+const products = [
+{id:1,name:"Piñata Dinosaurio",cat:"Piñatas",theme:"Dinosaurios",price:35000,stock:8,emoji:"🦖",desc:"Piñata temática de dinosaurio para cumpleaños."},
+{id:2,name:"Piñata Unicornio",cat:"Piñatas",theme:"Unicornio",price:35000,stock:6,emoji:"🦄",desc:"Piñata temática de unicornio."},
+{id:3,name:"Globo Número 5",cat:"Globos",theme:"General",price:6500,stock:20,emoji:"🎈",desc:"Globo metálico con número 5."},
+{id:4,name:"Pack Globos Arcoíris x10",cat:"Globos",theme:"General",price:12000,stock:15,emoji:"🎈",desc:"Pack de 10 globos de colores."},
+{id:5,name:"Guirnalda Feliz Cumpleaños",cat:"Decoración",theme:"General",price:14000,stock:12,emoji:"🎊",desc:"Guirnalda para decorar la zona principal."},
+{id:6,name:"Cortina Metálica",cat:"Decoración",theme:"General",price:18000,stock:10,emoji:"✨",desc:"Cortina decorativa para pared o fondo."},
+{id:7,name:"Set Platos y Vasos x10",cat:"Mesa y vajilla",theme:"General",price:22000,stock:14,emoji:"🍽️",desc:"Set para servir a 10 invitados."},
+{id:8,name:"Bolsitas de Sorpresa x10",cat:"Dulces y sorpresas",theme:"General",price:16000,stock:18,emoji:"🎁",desc:"Bolsitas para recuerdos y sorpresas."},
+{id:9,name:"Antifaces de Fiesta x10",cat:"Accesorios",theme:"General",price:10000,stock:20,emoji:"😎",desc:"Pack de antifaces para invitados."},
+{id:10,name:"Decoración Princesa",cat:"Decoración",theme:"Princesas",price:28000,stock:7,emoji:"👑",desc:"Decoración temática para fiesta de princesas."},
+{id:11,name:"Kit Globos Fútbol",cat:"Accesorios",theme:"Fútbol",price:26000,stock:9,emoji:"⚽",desc:"Globos y detalles para una fiesta futbolera."},
+{id:12,name:"Decoración Superhéroes",cat:"Decoración",theme:"Superhéroes",price:30000,stock:5,emoji:"🦸",desc:"Decoración temática de superhéroes."}
+];
+
+const kits = [
+{id:101,name:"Kit Cumpleaños",theme:"General",price:85000,emoji:"🎂",items:["10 globos","Guirnalda","Set platos y vasos x10","Bolsitas de sorpresa x10"],desc:"Kit práctico para un cumpleaños clásico."},
+{id:102,name:"Kit Dinosaurios",theme:"Dinosaurios",price:125000,emoji:"🦖",items:["Piñata Dinosaurio","Globos temáticos","Guirnalda","Accesorios"],desc:"Todo lo básico para una fiesta de dinosaurios."},
+{id:103,name:"Kit Unicornio",theme:"Unicornio",price:125000,emoji:"🦄",items:["Piñata Unicornio","Globos","Decoración","Accesorios"],desc:"Una selección temática para una fiesta de unicornio."},
+{id:104,name:"Kit Fiesta Completa",theme:"General",price:180000,emoji:"🎉",items:["Globos","Piñata","Decoración","Mesa y vajilla","Sorpresas"],desc:"Una opción amplia para montar tu celebración."}
+];
+
+let cart = JSON.parse(localStorage.getItem("pinateria_cart") || "[]");
+let currentCat = "Todos";
+let currentTheme = "Todas";
+
+function save(){localStorage.setItem("pinateria_cart",JSON.stringify(cart));updateCartCount()}
+function updateCartCount(){document.getElementById("cartCount").textContent=cart.reduce((s,x)=>s+x.qty,0)}
+
+function go(id){document.getElementById(id).scrollIntoView({behavior:"smooth",block:"start"})}
+
+function renderFilters(){
+ const cats=["Todos","Globos","Piñatas","Decoración","Mesa y vajilla","Dulces y sorpresas","Accesorios"];
+ document.getElementById("categoryFilters").innerHTML=cats.map(c=>`<button class="filter ${currentCat===c?'active':''}" onclick="setCat('${c}')">${c}</button>`).join("");
+}
+function setCat(c){currentCat=c;renderFilters();renderProducts();go("inventario")}
+function setTheme(t){currentTheme=t;renderProducts();go("inventario")}
+
+function renderProducts(){
+ const q=document.getElementById("search").value.toLowerCase().trim();
+ let arr=products.filter(p=>
+  (currentCat==="Todos"||p.cat===currentCat)&&
+  (currentTheme==="Todas"||p.theme===currentTheme)&&
+  (!q||(p.name+" "+p.cat+" "+p.theme).toLowerCase().includes(q))
+ );
+ document.getElementById("productsGrid").innerHTML=arr.length?arr.map(productCard).join('<span></span>'):'<div class="empty">No encontramos productos con esos filtros.</div>';
+}
+function productCard(p){
+ return `<article class="card">
+ <div class="visual">${p.emoji}</div><div class="card-body">
+ <span class="tag">${p.cat}</span><h3>${p.name}</h3><div class="price">${money(p.price)}</div>
+ <div class="stock">✓ ${p.stock} disponibles · ${p.theme}</div>
+ <div class="card-actions"><button class="view" onclick="showProduct(${p.id})">Ver producto</button><button class="add" onclick="add(${p.id})">Agregar</button></div>
+ </div></article>`;
+}
+
+function renderKits(){
+ document.getElementById("kitsGrid").innerHTML=kits.map(k=>`<article class="card kit"><div class="visual">${k.emoji}</div><div class="card-body">
+ <span class="tag">KIT · ${k.theme}</span><h3>${k.name}</h3><div class="price">${money(k.price)}</div>
+ <div class="kit-list">${k.items.map(x=>"• "+x).join("<br>")}</div>
+ <div class="card-actions"><button class="view" onclick="showKit(${k.id})">Ver kit</button><button class="add" onclick="addKit(${k.id})">Agregar</button></div>
+ </div></article>`).join("");
+}
+
+function renderThemes(){
+ const data=[["Todas","✨"],["Unicornio","🦄"],["Dinosaurios","🦖"],["Princesas","👑"],["Fútbol","⚽"],["Superhéroes","🦸"],["General","🎉"]];
+ document.getElementById("themes").innerHTML=data.map(([t,e])=>`<button class="theme" onclick="setTheme('${t}')"><span class="emoji">${e}</span>${t}</button>`).join("");
+}
+
+function showProduct(id){
+ const p=products.find(x=>x.id===id);
+ openModal(`<div class="modal-top"><div><span class="tag">${p.cat}</span><h2>${p.name}</h2></div><button class="close" onclick="closeModal()">×</button></div>
+ <div class="big">${p.emoji}</div><p>${p.desc}</p><p><strong>Temática:</strong> ${p.theme}<br><strong>Precio:</strong> ${money(p.price)}<br><strong>Stock:</strong> ${p.stock} unidades</p>
+ <button class="add" style="width:100%;margin-top:16px;padding:13px" onclick="add(${p.id});closeModal()">Agregar al carrito</button>`);
+}
+function showKit(id){
+ const k=kits.find(x=>x.id===id);
+ openModal(`<div class="modal-top"><div><span class="tag">KIT · ${k.theme}</span><h2>${k.name}</h2></div><button class="close" onclick="closeModal()">×</button></div>
+ <div class="big">${k.emoji}</div><p>${k.desc}</p><p><strong>Incluye:</strong><br>${k.items.map(x=>"• "+x).join("<br>")}</p><p><strong>Precio:</strong> ${money(k.price)}</p>
+ <button class="add" style="width:100%;margin-top:16px;padding:13px" onclick="addKit(${k.id});closeModal()">Agregar al carrito</button>`);
+}
+function openModal(html){document.getElementById("modal").innerHTML=html;document.getElementById("modalBack").classList.add("show")}
+function closeModal(){document.getElementById("modalBack").classList.remove("show")}
+
+function add(id){
+ const p=products.find(x=>x.id===id);const existing=cart.find(x=>x.key==="p"+id);
+ if(existing){if(existing.qty<p.stock)existing.qty++}else cart.push({key:"p"+id,name:p.name,price:p.price,qty:1,type:"Producto",stock:p.stock});
+ save();
+}
+function addKit(id){
+ const k=kits.find(x=>x.id===id);const existing=cart.find(x=>x.key==="k"+id);
+ if(existing)existing.qty++;else cart.push({key:"k"+id,name:k.name,price:k.price,qty:1,type:"Kit",stock:99});
+ save();
+}
+function changeQty(key,delta){
+ const item=cart.find(x=>x.key===key);if(!item)return;
+ item.qty+=delta;if(item.qty<=0)cart=cart.filter(x=>x.key!==key);
+ if(item.qty>item.stock)item.qty=item.stock;
+ save();openCart();
+}
+function removeItem(key){cart=cart.filter(x=>x.key!==key);save();openCart()}
+function cartTotal(){return cart.reduce((s,x)=>s+x.price*x.qty,0)}
+function openCart(){
+ let body=cart.length?cart.map(x=>`<div class="cart-row"><div><strong>${x.name}</strong><br><small>${x.type} · ${money(x.price)} c/u</small><br><button class="remove" onclick="removeItem('${x.key}')">Eliminar</button></div><div class="qty"><button onclick="changeQty('${x.key}',-1)">−</button><b>${x.qty}</b><button onclick="changeQty('${x.key}',1)">+</button></div></div>`).join(""):'<div class="empty">Tu carrito está vacío.</div>';
+ document.getElementById("modal").innerHTML=`<div class="modal-top"><h2>🛒 Tu carrito</h2><button class="close" onclick="closeModal()">×</button></div>${body}
+ ${cart.length?`<div class="cart-total"><span>Total</span><span>${money(cartTotal())}</span></div><button class="checkout" onclick="checkout()">💬 Pagar por WhatsApp</button>`:""}`;
+ document.getElementById("modalBack").classList.add("show");
+}
+function checkout(){
+ if(!cart.length)return;
+ let msg="Hola, quiero realizar este pedido:%0A%0A";
+ cart.forEach(x=>msg+=`• ${encodeURIComponent(x.name)} x${x.qty} = ${encodeURIComponent(money(x.price*x.qty))}%0A`);
+ msg+=`%0A*TOTAL: ${encodeURIComponent(money(cartTotal()))}*%0A%0A¿Me confirman disponibilidad y forma de pago?`;
+ window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`,"_blank","noopener");
+}
+
+document.getElementById("search").addEventListener("input",renderProducts);
+document.getElementById("contactWa").href=`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hola, quiero información sobre los productos de la piñatería.")}`;
+renderFilters();renderKits();renderProducts();renderThemes();updateCartCount();
+</script>
+</body>
+</html>
